@@ -25,11 +25,11 @@ const Footer = () => {
             </div>
           ))}
 
-          <div className='flex justify-between lg:col-span-2 w-[250px] lg:place-self-end h-full m-auto sm:m-0'>
+          <div className='flex justify-between lg:col-span-2 gap-2 lg:place-self-end h-full m-auto sm:m-0'>
             {['fa-facebook', 'fa-twitter', 'fa-pinterest', 'fa-instagram'].map(
               (icon) => (
                 <a href='!#' className='m-0 p-0 text-[#fff] hover:text-cyan' key={icon}>
-                  <i className={`fab ${icon}-square fa-3x`}></i>
+                  <i className={`fab ${icon}-square text-4xl sm:text-5xl`}></i>
                 </a>
               )
             )}

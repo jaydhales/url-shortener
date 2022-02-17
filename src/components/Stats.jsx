@@ -40,7 +40,7 @@ const Stats = () => {
           ].map(([heading, details, imgUrl, index]) => {
             return (
               <div
-                className={`w-[300px] bg-[white] rounded-sm mx-4 my-24 px-4 relative ${index}`}
+                className={`w-[250px] sm:w-[300px] bg-[white] rounded-sm sm:mx-4 my-24 px-4 relative ${index}`}
                 key={heading}
               >
                 <div className='w-max bg-dark-violet rounded-full m-auto lg:m-0 -translate-y-1/2'>
