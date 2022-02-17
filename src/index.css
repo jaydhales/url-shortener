@@ -1,13 +1,36 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-very-dark-violet font-bold;
+  }
+
+  a {
+    @apply p-2 text-gray hover:text-very-dark-violet;
+  }
+
+  .btn {
+    @apply bg-cyan py-3 px-8 text-[#fff] hover:text-[#fff] hover:bg-opacity-70 rounded-full font-bold;
+  }
+
+  .one {
+    @apply z-20 lg:translate-y-0;
+  }
+
+  .two {
+    @apply z-10 lg:translate-y-10 before:absolute before:bg-cyan before:w-2 before:h-32 before:right-1/2 before:bottom-full before:translate-x-1/2 lg:before:translate-x-0 lg:before:-translate-y-1/2 lg:before:w-12 lg:before:h-2 lg:before:top-1/2 lg:before:right-full;
+  }
+
+  .three {
+    @apply lg:translate-y-20 before:absolute before:bg-cyan before:w-2 before:h-32 before:right-1/2 before:bottom-full before:translate-x-1/2 lg:before:translate-x-0 lg:before:-translate-y-1/2 lg:before:w-12 lg:before:h-2 lg:before:top-1/2 lg:before:right-full;
+  }
 }
