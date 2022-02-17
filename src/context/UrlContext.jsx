@@ -23,7 +23,7 @@ export function UrlProvider({ children }) {
           if (!res.ok) {
             alert(res.error);
           } else if (
-            data.length > 0 &&
+            data.length > 1 &&
             data.filter((link) => link.code === code) !== []
           ) {
             alert('duplicate link detected');
