@@ -27,7 +27,6 @@ export function UrlProvider({ children }) {
               console.log(data.filter((link) => link.code === res.result.code));
             } else {
               setData([res.result, ...data]);
-              
             }
           } else {
             console.log(res.error);
