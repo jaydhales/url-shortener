@@ -6,7 +6,6 @@ export function UrlProvider({ children }) {
   const [urlInput, setUrlInput] = useState('');
   const [rawUrl, setRawUrl] = useState('');
   const [data, setData] = useState([]);
-  const [code, setCode] = useState('');
 
   function addInput(e) {
     e.preventDefault();
@@ -18,18 +17,22 @@ export function UrlProvider({ children }) {
       fetch(`https://api.shrtco.de/v2/shorten?url=${rawUrl}`)
         .then((response) => response.json())
         .then((res) => {
-          res.ok && setCode(res.result.code);
-
-          if (!res.ok) {
-            alert(res.error);
-          } else if (
-            data.length > 0 &&
-            data.filter((link) => link.code === code) !== []
-          ) {
-            alert('duplicate link detected');
+          if (res.ok) {
+            console.log(res.result.code);
+            if (
+              data.length > 0 &&
+              data.filter((link) => link.code === res.result.code).length > 0
+            ) {
+              console.log('Duplicate Link Detected');
+              console.log(data.filter((link) => link.code === res.result.code));
+            } else {
+              setData([res.result, ...data]);
+              
+            }
           } else {
-            setData([res.result, ...data]);
+            console.log(res.error);
           }
+
           setUrlInput('');
           setRawUrl('');
         });
